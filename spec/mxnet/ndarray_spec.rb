@@ -140,7 +140,7 @@ module MXNet
       context 'when array is N-dimensional' do
         specify 'does not raise OOB when in bounds' do
           a = MXNet::NDArray.ones([5,5])
-          new_values = [1,2,3,4,5]
+          new_values = MXNet::NDArray.array([1,2,3,4,5])
 
           expect{a[0, 0..4] = MXNet::NDArray.array(new_values)}.to_not raise_error
           #ensure integrity of values that were set in ndarray
