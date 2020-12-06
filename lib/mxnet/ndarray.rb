@@ -228,7 +228,7 @@ module MXNet
           elsif stop < 0
             stop += len
             raise IndexError, "slicing stop #{stop - len} exceeds limit of #{len}" if stop < 0
-          elsif stop >= len
+          elsif stop > len
             raise IndexError, "slicing stop #{stop} exceeds limit of #{len}"
           end
 
